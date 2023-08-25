@@ -41,17 +41,19 @@ const conversionDatos = data =>  {
         dataVar = 'El valor ingresado esta vacio o incorrecto';
     } else {
         console.log (`El valor ingresado es de tipo: ${dataType}, con un valor de: ${data}`);
-        switch (dataType) {
-            case 'number' :
+        switch (dataType) {/* una estructura de control de flujo que permite simplificar la evaluación de múltiples condiciones.
+        es útil cuando se necesita comparar una misma expresión con diferentes valores y ejecutar diferentes bloques de código en función del valor que coincida.*/
+            case 'number' ://representa un valor especifico, si la expresion coincide con la respuesta que es, es ejecutada*/
                 dataVar = invertirNumero(data);
-                break;
+                break;/*se utiliza para detener la ejecucion del switch, una vez haya encontrado la respuesta y cioncidencia, 
+                el flujo de ejecución continuará pasando por todos los casos siguientes, incluso si no coinciden con el valor de la expresión, se usa solo para ejecutar la perte del codigo que coincida*/
             case 'string' :
                 dataVar = invertirTexto(data);
                 break;
             case 'object' :
                 dataVar = invertirArreglo(data);
                 break;
-            default:
+            default://vota un mensaje de error si el valor ingresado, no tiene nada que ver o no coincide con ninguno de los casos.
                 dataVar = 'El Valor ingresado no se puede invertir';        
                     
         }
